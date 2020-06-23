@@ -1,0 +1,35 @@
+ubuntu@ip-172-31-17-236:~$ sudo useradd -p 123 -s /bin/bash user_new
+ubuntu@ip-172-31-17-236:~$ sudo passwd user_new
+New password: 
+Retype new password: 
+passwd: password updated successfully
+ubuntu@ip-172-31-17-236:~/lesson4$ echo 'print("Hello, world!")' > proj.py
+ubuntu@ip-172-31-17-236:~/lesson4$ chmod o+rwx proj.py 
+ubuntu@ip-172-31-17-236:~/lesson4$ su user_new
+Password: 
+user_new@ip-172-31-17-236:/home/ubuntu/lesson4$ vim proj.py 
+user_new@ip-172-31-17-236:/home/ubuntu/lesson4$ cat proj.py 
+print("Hello, big world!")
+user_new@ip-172-31-17-236:/home/ubuntu/lesson4$ vim proj.py
+user_new@ip-172-31-17-236:/home/ubuntu/lesson4$ cat proj.py 
+import numpy as np
+
+a = np.arange(1, 11)
+b = a.reshape((-1, 1))
+
+print(b)
+
+user_new@ip-172-31-17-236:/home/ubuntu/lesson4$ exit
+exit
+ubuntu@ip-172-31-17-236:~/lesson4$ python3 proj.py 
+[[ 1]
+ [ 2]
+ [ 3]
+ [ 4]
+ [ 5]
+ [ 6]
+ [ 7]
+ [ 8]
+ [ 9]
+ [10]]
+
